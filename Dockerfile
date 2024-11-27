@@ -8,7 +8,8 @@ WORKDIR /app
 COPY main.py /app/
 
 # Install dependencies (if any)
-RUN pip install flask
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose port
 EXPOSE 8080
